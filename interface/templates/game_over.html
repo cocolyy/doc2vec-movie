@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="{{url_for('static',  filename='css/bootstrap.css')}}" rel="stylesheet">
+    <title>Game Over</title>
+    <style>
+      body {
+        background-color: #222222;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="dark">
+    <div class="container">
+      <h1>Congratulations, you guessed the movie!</h1>
+      <p>You have completed the game.</p>
+      <h3>Previous guesses:</h3>
+      <ul>
+        {% for guess in previous_guesses %}
+        <li>{{ guess[0] }}: {{ guess[1] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
